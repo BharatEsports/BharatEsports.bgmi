@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            display: flex;
+            width: 200vw; /* Set the width to accommodate both images */
+            transition: transform 0.5s ease; /* Smooth transition for scrolling effect */
+        }
+
+        .image {
+            flex: 0 0 50vw; /* Each image takes up 50% of the viewport width */
+            height: 100vh; /* Full height of the viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+        }
+
+        .image1 {
+            background-image: url('./images/points/points1.jpg');
+        }
+
+        .image2 {
+            background-image: url('./images/points/points1.jpg');
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image image1"></div>
+        <div class="image image2"></div>
+    </div>
+
+    <script>
+        // Add JavaScript to handle scrolling and update the container's transform property
+        window.addEventListener('scroll', function() {
+            const scrollAmount = window.scrollX;
+            document.querySelector('.container').style.transform = `translateX(${-scrollAmount}px)`;
+        });
+    </script>
+</body>
+</html>
